@@ -3,7 +3,7 @@ using System.Collections.Generic;
 using UnityEngine;
 using UnityEngine.SceneManagement;
 
-public class EnemyMovement : MonoBehaviour
+public class Enemy2Movement : MonoBehaviour
 {
     public float speed = 5;
 
@@ -11,7 +11,7 @@ public class EnemyMovement : MonoBehaviour
     void Update()
     {
         float yValue = speed * Time.deltaTime;
-        transform.Translate(0, - yValue, 0);
+        transform.Translate(0, -yValue, 0);
 
     }
 
@@ -19,14 +19,14 @@ public class EnemyMovement : MonoBehaviour
     {
         if (collision.gameObject.tag == "Bullet")
         {
-          Score.scoreValue += 5;
-          Destroy(gameObject);
+            Score.scoreValue += 10;
+            Destroy(gameObject);
         }
 
-        
+
         if (collision.gameObject.tag == "Player")
         {
-          Destroy(gameObject);
+            Destroy(gameObject);
             SceneManager.LoadScene("Game Over");
             Debug.Log("Game Over");
         }
@@ -34,7 +34,7 @@ public class EnemyMovement : MonoBehaviour
         if (collision.gameObject.tag == "Wall")
         {
             Destroy(gameObject);
-            Score.scoreValue -= 5;
+            Score.scoreValue -= 10;
         }
 
     }
