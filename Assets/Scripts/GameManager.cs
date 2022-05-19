@@ -1,7 +1,7 @@
 using System.Collections;
 using System.Collections.Generic;
 using UnityEngine;
-using TMPro;
+
 
 
 public class GameManager : MonoBehaviour
@@ -14,7 +14,7 @@ public class GameManager : MonoBehaviour
     public float SpawnSpeed = 2.0f;
     public float SpawnSpeed2 = 2.0f;
 
-    public TextMeshPro timerText;
+   
    
   
 
